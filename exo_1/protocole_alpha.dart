@@ -23,4 +23,26 @@ Notre agent de liaison vous contactera à 23h.
  
   
    }
+   String miroir(String texte) {
+  return texte.split('').reversed.join('');
+}
+
+void main() {
+  String texte = "Hello";
+  String inverse = miroir(texte);
+  print(inverse);
+  protocol beta
+String miroir(String texte) {
+  return texte.split('').reversed.join('');
+}
+String texte = "Hello";
+  String inverse = miroir(texte);
+  print(inverse);
+  
+  String remplacerAgentParEspion(String texte) {
+  return texte.replaceAllMapped(RegExp(r'\b[Aa]gent\b'), (match) {
+    return match.group(0)!.toLowerCase() == "agent" ? "espion" : "Espion";
+  });  }
+}
+
       
